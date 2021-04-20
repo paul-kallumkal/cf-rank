@@ -7,12 +7,14 @@ const m1 = document.querySelector('#m1')
 const m2 = document.querySelector('#m2')
 const m3 = document.querySelector('#m3')
 
+
+
 cform.addEventListener('submit',(e)=>{
     e.preventDefault()
         m1.textContent = 'Loading...'
         m2.textContent = ''
         m3.textContent = ''
-        fetch('http://localhost:3000/cfapi?cid=' + cid.value + '&usr=' + usr.value).then((response) =>{
+        fetch('/cfapi?cid=' + cid.value + '&usr=' + usr.value).then((response) =>{
         response.json().then((data) => {
             if(data.status)
             {

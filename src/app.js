@@ -6,7 +6,7 @@ const cf = require('./utils/cf')
 const app = express()
 const viewsPath = path.join(__dirname,'../templates/views')
 const partialsPath = path.join(__dirname,'../templates/partials')
-
+const port = process.env.PORT || 3000
 
 //setup hbs
 app.set('views',viewsPath)
@@ -87,6 +87,6 @@ app.get('*', (req,res) =>{
 })
 
 
-app.listen(3000, ()=>{
-    console.log('Sever up on port 3000')
+app.listen(port, ()=>{
+    console.log('Sever up on port ' + port)
 })
