@@ -15,11 +15,24 @@ hbs.registerPartials(partialsPath)
 
 app.use(express.static(path.join(__dirname,'../public')))
 
-app.get('',(req,res) =>{
-    res.render('index',{  
-        title: 'Main page',
-        name: 'Paul'
+app.get('', (req,res) =>{
+    
+    cf.query(req.query.cid,req.query.usr,(e,out) => {
+        if(e)
+        {
+            return res.render('',{
+                title: 'Codeforces Rank Finder',
+                name: 'Paul',
+                message:e
+            })
+        }
+        res.render('',{
+            title: 'Codeforces Rank Finder',
+            name: 'Paul',
+        })
+        
     })
+    
 })
 
 app.get('/help', (req,res)=>{
@@ -38,25 +51,6 @@ app.get('/about', (req,res)=>{
     })
 })
 
-app.get('/cf', (req,res) =>{
-    
-    cf.query(req.query.cid,req.query.usr,(e,out) => {
-        if(e)
-        {
-            return res.render('cf',{
-                title: 'Codeforces Rank Finder',
-                name: 'Paul',
-                message:e
-            })
-        }
-        res.render('cf',{
-            title: 'Codeforces Rank Finder',
-            name: 'Paul',
-        })
-        
-    })
-    
-})
 
 app.get('/cfapi', (req,res) =>{
     

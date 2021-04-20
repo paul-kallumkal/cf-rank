@@ -1,5 +1,3 @@
-console.log('JS file loaded sucessfully')
-
 const cform = document.querySelector('form')
 const usr = document.querySelector('#usr')
 const cid = document.querySelector('#cid')

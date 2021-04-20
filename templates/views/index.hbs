@@ -10,7 +10,26 @@
 <body>
   <div class="main">
    {{>header}}
+
+  <p>{{message}}</p>
+ 
+
+  <form>
+    
+    <input id="cid" placeholder="Contest ID">
+    <input id="usr" placeholder="Username">
+    <button>Find Rank</button>
+  </form>
+
+   <p id="m1"></p>
+  <p id="m2"></p>
+  <p id="m3"></p>
+
   </div>
+  <h2><a href="/help">Need help?</a></h2>
      {{>footer}}
+
+     
+  <script src="/js/app.js"></script>
 </body>
 </html>
